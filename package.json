@@ -1,12 +1,8 @@
 {
   "name": "binary-pmb",
-  "version": "0.3.1",
-  "description": "Unpack multibyte binary values from buffers. (Maintenance fork of substack's `binary`)",
+  "version": "0.3.2",
+  "description": "Unpack multibyte binary values from buffers and streams. (Maintenance fork of substack's `binary`)",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/mk-pmb/binary-node.git"
-  },
   "keywords": [
     "binary",
     "decode",
@@ -15,6 +11,14 @@
     "signed",
     "unsigned"
   ],
+  "homepage": "https://github.com/mk-pmb/binary-pmb-node/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/binary-pmb-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/binary-pmb-node/issues"
+  },
   "author": {
     "name": "James Halliday",
     "email": "mail@substack.net",
