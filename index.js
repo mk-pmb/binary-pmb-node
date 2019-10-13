@@ -30,6 +30,7 @@ exports.stream = function (input) {
 
     var pending = null;
     function getBytes (bytes, cb, skip) {
+        bytes = vars.maybeStrLookup(bytes);
         pending = {
             bytes : bytes,
             skip : skip,
@@ -129,10 +130,6 @@ exports.stream = function (input) {
         };
 
         self.buffer = function (name, bytes) {
-            if (typeof bytes === 'string') {
-                bytes = vars.get(bytes);
-            }
-
             getBytes(bytes, function (buf) {
                 vars.set(name, buf);
                 next();
@@ -140,10 +137,6 @@ exports.stream = function (input) {
         };
 
         self.skip = function (bytes) {
-            if (typeof bytes === 'string') {
-                bytes = vars.get(bytes);
-            }
-
             getBytes(bytes, function () {
                 next();
             });
@@ -280,12 +273,8 @@ exports.parse = function parse (buffer) {
         return self;
     };
 
-    self.skip = function (bytes) {
-        if (typeof bytes === 'string') {
-            bytes = vars.get(bytes);
-        }
-        offset += bytes;
-
+    self.skip = function (dist) {
+        offset += vars.maybeStrLookup(dist);
         return self;
     };
 

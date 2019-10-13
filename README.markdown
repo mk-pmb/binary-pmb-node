@@ -16,7 +16,7 @@ examples
 stream.js
 ---------
 
-``` js
+```javascript
 var binary = require('binary');
 
 var ws = binary()
@@ -43,7 +43,7 @@ abcdefgh
 parse.js
 --------
 
-``` js
+```javascript
 var buf = new Buffer([ 97, 98, 99, 100, 101, 102, 0 ]);
 
 var binary = require('binary');
@@ -106,9 +106,16 @@ b.buffer(key, size)
 -------------------
 
 Take `size` bytes directly off the buffer stream, putting the resulting buffer
-slice in the variable stash at `key`. If `size` is a string, use the value at
-`vars[size]`. The key follows the same dotted address rules as the word
-functions.
+slice in the variable stash at `key`.
+
+__vars lookup:__ If `size` is a string, use the value at `vars[size]`.
+The key follows the same dotted address rules as the word functions.
+
+b.skip(dist)
+------------
+
+Jump `dist` bytes ahead.
+The "vars lookup" feature from `.buffer` applies to `dist`.
 
 b.scan(key, buffer)
 -------------------
@@ -119,7 +126,7 @@ it will be converted into a Buffer internally.
 
 For example, to read in a line you can just do:
 
-``` js
+```javascript
 var b = binary()
     .scan('line', new Buffer('\r\n'))
     .tap(function (vars) {
