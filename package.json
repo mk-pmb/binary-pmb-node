@@ -1,11 +1,11 @@
 {
-  "name" : "binary-pmb",
-  "version" : "0.3.1",
-  "description" : "Unpack multibyte binary values from buffers. (Maintenance fork of substack's `binary`)",
-  "main" : "index.js",
-  "repository" : {
-    "type" : "git",
-    "url" : "http://github.com/mk-pmb/binary-node.git"
+  "name": "binary-pmb",
+  "version": "0.3.1",
+  "description": "Unpack multibyte binary values from buffers. (Maintenance fork of substack's `binary`)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mk-pmb/binary-node.git"
   },
   "keywords": [
     "binary",
@@ -15,28 +15,28 @@
     "signed",
     "unsigned"
   ],
-  "author" : {
-    "name" : "James Halliday",
-    "email" : "mail@substack.net",
-    "url" : "http://substack.net"
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
   },
   "contributors": [
     "M.K. (https://github.com/mk-pmb)"
   ],
 
-  "dependencies" : {
-    "chainsaw" : "~0.1.0",
-    "buffers" : "~0.1.1"
+  "dependencies": {
+    "chainsaw": "~0.1.0",
+    "buffers": "~0.1.1"
   },
-  "devDependencies" : {
-    "seq" : "~0.2.5",
-    "tap" : "~0.2.4"
+  "devDependencies": {
+    "seq": "~0.2.5",
+    "tap": "~0.2.4"
   },
-  "scripts" : {
-    "test" : "tap test/*.js"
+  "scripts": {
+    "test": "tap test/*.js"
   },
-  "license" : "MIT",
-  "engine" : {
-    "node" : ">=0.4.0"
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.4.0"
   }
 }
