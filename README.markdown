@@ -111,6 +111,17 @@ slice in the variable stash at `key`.
 __vars lookup:__ If `size` is a string, use the value at `vars[size]`.
 The key follows the same dotted address rules as the word functions.
 
+b.str(key, size[, encoding])
+----------------------------
+
+Same as `.buffer` but decode the data as a string.
+Default `encoding` is `latin1`.
+
+b.utf8(key, size)
+-----------------
+
+Same as `.buffer` but decode the data as a UTF-8 string.
+
 b.skip(dist)
 ------------
 

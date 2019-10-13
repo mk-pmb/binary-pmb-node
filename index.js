@@ -262,15 +262,20 @@ exports.parse = function parse (buffer) {
         return self;
     };
 
-    self.buffer = function (name, size) {
-        if (typeof size === 'string') {
-            size = vars.get(size);
-        }
-        var buf = buffer.slice(offset, Math.min(buffer.length, offset + size));
+    function bufOrStr(name, size, encoding) {
+        size = vars.maybeStrLookup(size);
+        var data = buffer.slice(offset, Math.min(buffer.length, offset + size));
         offset += size;
-        vars.set(name, buf);
-
+        if (encoding) { data = data.toString(encoding); }
+        vars.set(name, data);
         return self;
+    };
+
+    self.buffer = function (key, sz) { return bufOrStr(key, sz); };
+    self.utf8 = function (key, sz) { return bufOrStr(key, sz, 'utf8'); };
+
+    self.str = function (key, sz, enc) {
+      return bufOrStr(key, sz, enc || 'latin1');
     };
 
     self.skip = function (dist) {
