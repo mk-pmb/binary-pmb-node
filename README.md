@@ -32,55 +32,9 @@ npm install binary
 Examples
 ========
 
-### stream.js
-
-```javascript
-var binary = require('binary');
-
-var ws = binary()
-    .word32lu('x')
-    .word16bs('y')
-    .word16bu('z')
-    .tap(function (vars) {
-        console.dir(vars);
-    })
-;
-process.stdin.pipe(ws);
-process.stdin.resume();
-```
-
-output:
-
-```
-$ node examples/stream.js
-abcdefgh
-{ x: 1684234849, y: 25958, z: 26472 }
-^D
-```
+See the [docs/examples/](docs/examples/) directory.
 
 
-
-### parse.js
-
-
-```javascript
-var buf = new Buffer([ 97, 98, 99, 100, 101, 102, 0 ]);
-
-var binary = require('binary');
-var vars = binary.parse(buf)
-    .word16ls('ab')
-    .word32bu('cf')
-    .word8('x')
-    .vars
-;
-console.dir(vars);
-```
-
-output:
-
-```
-{ ab: 25185, cf: 1667523942, x: 0 }
-```
 
 API
 ===
