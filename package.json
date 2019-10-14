@@ -1,6 +1,6 @@
 {
   "name": "binary-pmb",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Unpack multibyte binary values from buffers and streams. (Maintenance fork of substack's `binary`)",
   "main": "index.js",
   "keywords": [
@@ -29,12 +29,14 @@
   ],
 
   "dependencies": {
-    "chainsaw": "~0.1.0",
-    "buffers": "~0.1.1"
+    "buffers": "^0.1.1",
+    "chainsaw": "^0.1.0"
   },
   "devDependencies": {
-    "seq": "~0.2.5",
-    "tap": "~0.2.4"
+    "bufferlist": "^0.1.0",
+    "hashish": "^0.0.4",
+    "seq": "^0.3.5",
+    "tap": "^0.2.6"
   },
   "scripts": {
     "test": "tap test/*.js"
