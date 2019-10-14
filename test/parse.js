@@ -52,3 +52,23 @@ test('loop', function (t) {
         y : 9,
     });
 });
+
+
+test('Bad offsets for .buffer and .skip', function(t) {
+    t.plan(1);
+    var v = binary.parse(Buffer.from('\r\t@'))
+        .buffer('a', NaN)
+        .word8u('b')
+        .skip(NaN)
+        .word8u('c')
+        .utf8('d', undefined)
+        .utf8('e', 1)
+        .vars;
+    t.deepEqual(v, {
+      a: Buffer.from([]),
+      b: 13,
+      c: 9,
+      d: '',
+      e: '@',
+    });
+});

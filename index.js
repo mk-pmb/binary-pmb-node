@@ -38,7 +38,7 @@ exports.stream = function (input) {
 
     var pending = null;
     function getBytes (bytes, cb, skip) {
-        bytes = vars.maybeStrLookup(bytes);
+        bytes = (+vars.maybeStrLookup(bytes) || 0);
         pending = {
             bytes : bytes,
             skip : skip,
@@ -271,7 +271,7 @@ exports.parse = function parse (buffer) {
     };
 
     function bufOrStr(name, size, encoding) {
-        size = vars.maybeStrLookup(size);
+        size = (+vars.maybeStrLookup(size) || 0);
         var data = buffer.slice(offset, Math.min(buffer.length, offset + size));
         offset += size;
         if (encoding) { data = data.toString(encoding); }
@@ -287,7 +287,8 @@ exports.parse = function parse (buffer) {
     };
 
     self.skip = function (dist) {
-        offset += vars.maybeStrLookup(dist);
+        dist = +vars.maybeStrLookup(dist);
+        if (dist) { offset += dist; }
         return self;
     };
 
