@@ -1,6 +1,6 @@
 {
   "name": "binary-pmb",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Unpack multibyte binary values from buffers and streams. (Maintenance fork of substack's `binary`)",
   "main": "index.js",
   "keywords": [

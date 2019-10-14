@@ -48,7 +48,7 @@ var binary = require('binary-pmb')
   * [var b = binary()](#toc-var-b-binary)
   * [binary.parse(buf)](#toc-binary-parse-buf)
   * [b.vars](#toc-b-vars)
-  * [b.word{8,16,32,64}{l,b}{e,u,s}(key)](#toc-b-word-8-16-32-64-l-b-e-u-s-key)
+  * [b.word{8,16,24,32,64}{l,b}{e,u,s}(key)](#toc-b-word-8-16-24-32-64-l-b-e-u-s-key)
   * [b.buffer(key, size)](#toc-b-buffer-key-size)
   * [b.str(key, size&#x5B;, encoding&#x5D;)](#toc-b-str-key-size-encoding)
   * [b.utf8(key, size)](#toc-b-utf8-key-size)
@@ -89,8 +89,8 @@ See `binary.parse`.
 
 
 
-<a class="readme-ssi-toc-target" id="toc-b-word-8-16-32-64-l-b-e-u-s-key" name="toc-b-word-8-16-32-64-l-b-e-u-s-key"></a>
-### b.word{8,16,32,64}{l,b}{e,u,s}(key)
+<a class="readme-ssi-toc-target" id="toc-b-word-8-16-24-32-64-l-b-e-u-s-key" name="toc-b-word-8-16-24-32-64-l-b-e-u-s-key"></a>
+### b.word{8,16,24,32,64}{l,b}{e,u,s}(key)
 
 Parse bytes in the buffer or stream given:
 

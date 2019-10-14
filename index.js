@@ -4,6 +4,14 @@ var Buffers = require('buffers');
 var Vars = require('./lib/vars.js');
 var Stream = require('stream').Stream;
 
+var supportedWordSizes = [
+  // default nodejs buffer API widths:
+  1, 2, 4, 8,
+
+  // useful for RGB images and audio:
+  3,
+];
+
 exports = module.exports = function (bufOrEm, eventName) {
     if (Buffer.isBuffer(bufOrEm)) {
         return exports.parse(bufOrEm);
@@ -364,8 +372,7 @@ function decodeLEs (bytes) {
 
 function words (decode) {
     var self = {};
-
-    [ 1, 2, 4, 8 ].forEach(function (bytes) {
+    supportedWordSizes.forEach(function (bytes) {
         var bits = bytes * 8;
 
         self['word' + bits + 'le']
