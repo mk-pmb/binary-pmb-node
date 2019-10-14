@@ -2,7 +2,7 @@ var Seq = require('seq');
 var Hash = require('hashish');
 var EventEmitter = require('events').EventEmitter;
 
-var Bin = require('binary');
+var Bin = require('../../');
 var Buf = require('bufferlist/binary');
 var BufferList = require('bufferlist');
 
